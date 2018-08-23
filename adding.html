@@ -8,19 +8,14 @@
 
 <body>
   <script>
-    function Add_t() {
-      $('#main').append(data)
-    }
-
     function Text() {
       $("#text").css("display", "none");
       $("#im").css("display" , "block");
       $.get("https://vlad0mag0.github.io/README.md?123", function(data){
+        $("#main").append(data);
         setTimeout(function (){
-          $("#main").append(data);
-        },4000);
-        $("#im").css("display","none");
-        $("#text").css("display","block"); 
+          $("#im").css("display","none");
+          $("#text").css("display","block"); },4000); 
       });
     }
   </script>
@@ -28,10 +23,10 @@
   <p id="m.text">Text will be added here</p>
 </div>
 <div id="gifka">
-  <img id="im" height='400' width='400' src="vlad0mag0.github.io/ajax-loader.gif" style='display: none; '>
+  <img id="im" src="vlad0mag0.github.io/ajax-loader.gif" style='display: none; '>
 </div>
 <div id="text">
-  <button onclick="Text()" id="button">Add text.</button>
+  <button onclick="Text()" id="button">Add text</button>
 </div>
 </body>
 
