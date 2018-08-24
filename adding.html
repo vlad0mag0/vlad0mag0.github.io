@@ -7,8 +7,20 @@
 </head>
 
 <body>
-  <script>
-    var text= $("#count").text()
+<div id="main">
+  <p id="m.text">Text will be added here</p>
+</div>
+<div id="gifka">
+  <img id="im" src="vlad0mag0.github.io/ajax-loader.gif" style='display: none; '>
+</div>
+<div id="count">
+  <p>Our counter: </p>
+</div>
+<div id="text">
+  <button onclick="Text()" id="button">Add text</button>
+</div>
+<script>
+    var text= $("#count").text();
     var i = 0;
     function Text() {
       $("#text").css("display", "none");
@@ -16,24 +28,12 @@
       setTimeout(function (){
         $.get("https://vlad0mag0.github.io/README.md", function(data){
           $("#main").append(data);
-          i+=1
-          $("#count").text(text+i)
+          i+=1;
+          $("#count").text(text+i);
           Text();}); },10000);
 
      }
 
   </script>
-<div id="main">
-  <p id="m.text">Text will be added here</p>
-</div>
-<div id="gifka">
-  <img id="im" src="vlad0mag0.github.io/ajax-loader.gif" style='display: none; '>
-</div>
-<div>
-  <p id='count'>Our counter: </p>
-</div>
-<div id="text">
-  <button onclick="Text()" id="button">Add text</button>
-</div>
 </body>
 
